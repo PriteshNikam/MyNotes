@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.mynotes.data.Note" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/app_background_dark_color"
+        tools:context=".ui.editorscreen.AddNewNoteEditorFragment">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_goBack_addNoteEditor"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_51"
+            android:layout_marginStart="@dimen/dp_22"
+            android:clickable="true"
+            android:contentDescription="@string/go_back"
+            android:focusable="true"
+            android:padding="@dimen/dp_3"
+            android:src="@drawable/ic_svg_viewer_back_arrow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_previewNote_addNoteEditor"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_51"
+            android:layout_marginEnd="@dimen/dp_96"
+            android:clickable="true"
+            android:contentDescription="@string/view_edited_note"
+            android:focusable="true"
+            android:padding="@dimen/dp_3"
+            android:src="@drawable/ic_svg_viewer_output"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_saveNote_addNoteEditor"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_51"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:clickable="true"
+            android:contentDescription="@string/save_edited_note"
+            android:focusable="true"
+            android:padding="@dimen/dp_3"
+            android:src="@drawable/ic_svg_viewer_save"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_editNote_addNoteEditor"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_51"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:clickable="true"
+            android:contentDescription="@string/save_edited_note"
+            android:focusable="true"
+            android:padding="@dimen/dp_3"
+            android:src="@drawable/ic_svg_viewer_edit"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:fillViewport="true"
+            android:layout_marginTop="@dimen/dp_141"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_title_addNoteEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{note.noteTitle}"
+            android:inputType="textMultiLine"
+            android:maxLength="36"
+            android:maxLines="3"
+            android:hint="@string/title"
+            android:textSize="48sp"
+            android:textColorHint="@color/edit_text_hint_color"
+            android:textColor="@color/white"
+            android:background="@android:color/transparent"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@null"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_24" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_description_addNoteEditor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{note.noteDescription}"
+            android:hint="@string/type_something"
+            android:textSize="@dimen/sp_23"
+            android:textColorHint="@color/edit_text_hint_color"
+            android:textColor="@color/white"
+            android:gravity="start"
+            android:background="@android:color/transparent"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@null"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_24" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

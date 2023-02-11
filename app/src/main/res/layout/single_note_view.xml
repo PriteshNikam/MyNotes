@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.mynotes.data.Note" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/single_note_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:layout_marginEnd="@dimen/dp_25"
+        android:padding="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_24"
+        android:background="@drawable/single_view_shape"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackgroundBorderless">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_title_singleNoteView"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{note.noteTitle}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_25" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_delete_singleNoteView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_svg_viewer_delete_icon"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+</layout>
